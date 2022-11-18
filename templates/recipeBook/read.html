@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<p>{{rec.RecipeTitle}}</p>
+{% for ingredient in ing %}
+  {% for ing_rec in amt %}
+    {% if (ing_rec.RecipeID_id == rec.id) and (ing.id == ing_rec.IngredientID_id) %}
+      <p>{{ingredient.IngredientName}}</p>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+{% endblock %} 
